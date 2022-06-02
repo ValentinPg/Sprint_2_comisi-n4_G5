@@ -1,0 +1,13 @@
+
+
+
+.header-conteiner {
+    background-color: rgb(80, 135, 255);
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-conteiner p {
+    font-weight: 700;
+}
