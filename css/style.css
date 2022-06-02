@@ -1,5 +1,7 @@
 
-
+* {
+    box-sizing: border-box;
+}
 
 .header-conteiner {
     background-color: rgb(80, 135, 255);
@@ -10,4 +12,18 @@
 }
 .header-conteiner p {
     font-weight: 700;
+}
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.contenedor {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.contenedor, #contador {
+    display: flex;
+    flex-direction: column;
 }
