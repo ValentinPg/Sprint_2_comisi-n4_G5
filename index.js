@@ -1,6 +1,7 @@
 function agregar(){
     let create = document.createElement("div");
     let inp = document.createElement("input");
+    inp.classList.add("num");
     create.appendChild(inp);
 
     let adelante = document.getElementById("contador");
@@ -8,9 +9,11 @@ function agregar(){
 }
 
 function calcular(){
-    let boton = document.querySelectorAll("input");
-    boton.classList.add("newclass")
+    let boton = document.getElementsByClassName("num")[0].value;
     let bolsa = [];
-    bolsa.push(boton);
+    bolsa.push(Number(boton))
+
+    
+
     console.log(bolsa);
 }
