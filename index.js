@@ -1,16 +1,61 @@
-function agregar(){
-    let create = document.createElement("div");
-    let inp = document.createElement("input");
-    create.appendChild(inp);
+let nombres = [];
+let valores = [];
 
-    let adelante = document.getElementById("contador");
-    adelante.insertAdjacentElement("afterend", create)
+function agregarNombre(){
+    let minombre = document.getElementById("nombre").value;
+    let prueba = nombres.indexOf(minombre);
+    if(prueba >= 0 || minombre == "" ) {
+        alert("el nombre ingresado ya se encuentra en la base de datos, por favor cambielo")
+    } else {
+        nombres.push(minombre);
+        let miImporte = Number(document.getElementById("importe").value);
+        valores.push(miImporte);
+        console.log(valores);
+    }
+    console.log(nombres);
+    console.log(valores);
+
+
+
+    let create = document.createElement("li");
+    let lista = document.getElementById("texto");
+    create.innerText = nombres + "=" + valores;
+    lista.appendChild(create);
+    
 }
 
-function calcular(){
-    let boton = document.querySelectorAll("input");
-    boton.classList.add("newclass")
-    let bolsa = [];
-    bolsa.push(boton);
-    console.log(bolsa);
+function borrarNombre(){
+    let minombre = document.getElementById("nombre").value;
+    for (let nomb of nombres) {
+        if(nomb == minombre){
+            let cortar = nombres.indexOf(nomb);
+            nombres.splice(cortar, 1);
+            console.log(nombres);
+            valores.splice(cortar, 1);
+            console.log(valores);
+        }
+    }
+    let create = document.createElement("p");
+    let lista = document.getElementById("texto");
+    lista.innerText = nombres;
+    lista.appendChild(create)
+    
 }
+
+function sumar() {
+    let total = 0;
+    for (let x of valores) {
+    total += x;
+    } 
+    console.log (total);
+    let create = document.createElement("p");
+    let pantalla = document.getElementById("resultado");
+    pantalla.innerHTML = "LA SUMA TOTAL ES =" + total;
+    pantalla.appendChild(create);
+}
+
+
+
+
+
+
