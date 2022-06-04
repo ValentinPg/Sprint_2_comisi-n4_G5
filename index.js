@@ -1,19 +1,38 @@
-function agregar(){
-    let create = document.createElement("div");
-    let inp = document.createElement("input");
-    inp.classList.add("num");
-    create.appendChild(inp);
+let nombres = [];
+let valores = [];
 
-    let adelante = document.getElementById("contador");
-    adelante.insertAdjacentElement("afterend", create)
+function agregarNombre(){
+    let minombre = document.getElementById("nombre").value;
+    let prueba = nombres.indexOf(minombre);
+    if(prueba >= 0 || minombre == "" ) {
+        alert("el nombre ingresado ya se encuentra en la base de datos, por favor cambielo")
+    } else {
+        nombres.push(minombre);
+    }
+    console.log(nombres)
+
+    let create = document.createElement("p");
+    let lista = document.getElementById("texto");
+    lista.appendChild(create)
+    lista.innerText = nombres;
 }
 
-function calcular(){
-    let boton = document.getElementsByClassName("num")[0].value;
-    let bolsa = [];
-    bolsa.push(Number(boton))
-
-    
-
-    console.log(bolsa);
+function borrarNombre(){
+    let minombre = document.getElementById("nombre").value;
+    for (let nomb of nombres) {
+        if(nomb == minombre){
+            nombres.splice(nombres.indexOf(nomb), 1);
+            console.log(nombres);
+        }
+    }
+    let create = document.createElement("p");
+    let lista = document.getElementById("texto");
+    lista.appendChild(create)
+    lista.innerText = nombres;
 }
+
+
+
+
+
+
