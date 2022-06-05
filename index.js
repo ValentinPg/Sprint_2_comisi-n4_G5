@@ -1,3 +1,4 @@
+
 let nombres = [];
 let valores = [];
 
@@ -11,17 +12,17 @@ function agregarNombre(){
         let miImporte = Number(document.getElementById("importe").value);
         valores.push(miImporte);
         console.log(valores);
+
+        let create = document.createElement("li");
+        let lista = document.getElementById("texto");
+        let ultimoItem = nombres[nombres.length-1] + "= " + "$" + valores[valores.length-1];
+        lista.appendChild(create);
+        create.innerText = ultimoItem;
+    
     }
     console.log(nombres);
     console.log(valores);
 
-
-
-    let create = document.createElement("li");
-    let lista = document.getElementById("texto");
-    create.innerText = nombres + "=" + valores;
-    lista.appendChild(create);
-    
 }
 
 function borrarNombre(){
@@ -33,16 +34,16 @@ function borrarNombre(){
             console.log(nombres);
             valores.splice(cortar, 1);
             console.log(valores);
+            let lista = document.getElementById("texto");
+            let item = document.getElementsByTagName("li");
+            lista.removeChild(item.item(cortar));
         }
     }
-    let create = document.createElement("p");
-    let lista = document.getElementById("texto");
-    lista.innerText = nombres;
-    lista.appendChild(create)
     
 }
 
-function sumar() {
+/// calcula el total de todos los integrantes
+function sumar() { 
     let total = 0;
     for (let x of valores) {
     total += x;
@@ -50,9 +51,23 @@ function sumar() {
     console.log (total);
     let create = document.createElement("p");
     let pantalla = document.getElementById("resultado");
-    pantalla.innerHTML = "LA SUMA TOTAL ES =" + total;
+    pantalla.innerHTML = "LA SUMA TOTAL ES : $" + total;
     pantalla.appendChild(create);
+   
+///  para imprimir lo que cada uno aporta de los integrantes
+    let personas = nombres.length ;
+    let aporte =  total / personas ;
+    console.log(total)
+    console.log(personas)
+    console.log(aporte);
+    let crear = document.createElement("p");
+    let viewport = document.getElementById("DivisionGastos");
+    viewport.innerHTML = "A cada uno le toca aportar: $" + aporte.toFixed(2);
+    viewport.appendChild(crear);
+
 }
+
+
 
 
 
