@@ -12,17 +12,17 @@ function agregarNombre(){
         let miImporte = Number(document.getElementById("importe").value);
         valores.push(miImporte);
         console.log(valores);
+
+        let create = document.createElement("li");
+        let lista = document.getElementById("texto");
+        let ultimoItem = nombres[nombres.length-1] + "= " + "$" + valores[valores.length-1];
+        lista.appendChild(create);
+        create.innerText = ultimoItem;
+    
     }
     console.log(nombres);
     console.log(valores);
 
-
-
-    let create = document.createElement("li");
-    let lista = document.getElementById("texto");
-    create.innerText = nombres + ": " + valores;
-    lista.appendChild(create);
-    
 }
 
 function borrarNombre(){
@@ -34,12 +34,11 @@ function borrarNombre(){
             console.log(nombres);
             valores.splice(cortar, 1);
             console.log(valores);
+            let lista = document.getElementById("texto");
+            let item = document.getElementsByTagName("li");
+            lista.removeChild(item.item(cortar));
         }
     }
-    let create = document.createElement("p");
-    let lista = document.getElementById("texto");
-    lista.innerText = nombres;
-    lista.appendChild(create)
     
 }
 
