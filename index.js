@@ -1,3 +1,4 @@
+
 let nombres = [];
 let valores = [];
 
@@ -19,7 +20,7 @@ function agregarNombre(){
 
     let create = document.createElement("li");
     let lista = document.getElementById("texto");
-    create.innerText = nombres + "=" + valores;
+    create.innerText = nombres + ": " + valores;
     lista.appendChild(create);
     
 }
@@ -42,7 +43,8 @@ function borrarNombre(){
     
 }
 
-function sumar() {
+/// calcula el total de todos los integrantes
+function sumar() { 
     let total = 0;
     for (let x of valores) {
     total += x;
@@ -50,9 +52,23 @@ function sumar() {
     console.log (total);
     let create = document.createElement("p");
     let pantalla = document.getElementById("resultado");
-    pantalla.innerHTML = "LA SUMA TOTAL ES =" + total;
+    pantalla.innerHTML = "LA SUMA TOTAL ES : $" + total;
     pantalla.appendChild(create);
+   
+///  para imprimir lo que cada uno aporta de los integrantes
+    let personas = nombres.length ;
+    let aporte =  total / personas ;
+    console.log(total)
+    console.log(personas)
+    console.log(aporte);
+    let crear = document.createElement("p");
+    let viewport = document.getElementById("DivisionGastos");
+    viewport.innerHTML = "A cada uno le toca aportar: $" + aporte.toFixed(2);
+    viewport.appendChild(crear);
+
 }
+
+
 
 
 
