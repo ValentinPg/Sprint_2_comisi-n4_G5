@@ -1,5 +1,5 @@
 # Sprint_2_comisi-n4_G5
-Repositorio del grupo 5 de la comision 4, usado par el sprint 2.
+Repositorio del grupo 5 de la comision 4, usado para el sprint 2.
 - Uso de la aplicacion 
     - ingresar nombre e importe en sus correspondientes campos.
     - Una vez ingresado el integrante apretar el boton "Agregar al calculo" 
